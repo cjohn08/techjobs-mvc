@@ -20,7 +20,27 @@
 
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
+    <div th:if = "${jobs != null}">
 
+
+
+
+
+        <table th:each="job : ${jobs}" class="job-listing">
+
+            <tr th:each="mapItem : ${job}">
+
+                <td th:text="${mapItem.key}">Key</td>
+
+                <td th:text="${mapItem.value}">Value</td>
+
+            </tr>
+
+
+
+        </table>
+
+    </div>
 
     <!-- TODO #3 - Use the same list display from search.html -->
 
